@@ -4,6 +4,7 @@
 **Subject:** Optimal capital structure for the acquisition and modernisation of MSK a.d. Kikinda, and a reusable structure for subsequent industrial projects
 **Date:** September 2026
 **Status:** Structuring study for negotiation preparation. Not investment advice, not a financing commitment, and not a substitute for Serbian corporate/tax counsel.
+**Revision 2** — incorporates review feedback. Three claims from revision 1 are withdrawn and corrected: the categorical rejection of private equity, the characterisation of EBRD/IFC return requirements, and the statement that the founder must work without income for eight years. See the corrections log in `README.md`. New Tables 15–17 quantify the defensible founder share by leverage, what a MOIC cap actually pays, and what the multiple is measured on.
 
 ---
 
@@ -49,11 +50,19 @@ A **HoldCo / ProjectCo structure with founder 60% economics and 60% votes, funde
 
 Table 9 shows that moving capex from €150m to €300m swings founder terminal wealth from €259m to €110m — and at €300m the debt has to shrink to stay within DSCR, so the investor's cheque balloons to €181m for a 4.5% IRR, which no investor on earth funds. Moving the founder's share from 51% to 60% moves founder wealth by €39m (Table 11). The capex/EBITDA question is worth roughly **four times** more than the entire ownership negotiation. Every week spent negotiating percentages before the Chinese EPC feasibility study lands is a week spent optimising the wrong variable — which is precisely what Section 21 of the brief warned against, and the brief itself then does by making the split the central question.
 
-**2. No serious private-equity investor will take this deal at any split, and that is not a control problem.**
+**2. At the base-case economics, this asset probably cannot pay a conventional buyout or special-situations return — but that is a statement about a risk profile, not a rule about investor categories.**
 
-Table 14 is the important one. Hold-to-exit investor IRR on this asset tops out in the low-to-mid teens across *all ten* structures, at *every* founder percentage from 51% to 75%, at *every* shareholder-loan coupon from 6% to 12%, and at leverage up to the DSCR limit. Apollo, KKR, Oaktree, Advent and Lone Star target 18–22%+. [FACT: mid-market PE commonly targets 15–25% net IRR, large-cap 12–18%.](https://www.opalecapital.com/en/blog/private-equity-returns-2026) The gap is 6–10 points and **no amount of founder generosity closes it**, because the cash simply is not there.
+Hold-to-exit investor IRR at 40% economics is ~11.7%, and it stays in the low-to-mid teens across *all ten* structures, at *every* founder percentage from 51% to 75%, at *every* shareholder-loan coupon from 6% to 12%, and at leverage up to the DSCR limit. Table 15 makes the trade-off exact: pushing the investor to 14% costs the founder roughly 13 points of ownership at constant leverage.
 
-The reverse-analysis exercise in Section 17 of the brief assumes the deal gets rejected because the founder asked for too much. It gets rejected because the asset earns too little. The correct response is not to concede equity — it is to **change the investor universe**: infrastructure/value-add funds, family offices, strategics with an offtake motive, and Chinese industrial groups with ECA support. Conceding 51% to an investor who was never going to clear their hurdle is the worst possible outcome: the founder loses control *and* still gets no deal.
+**An earlier draft of this study said "no private-equity investor will take this at any split." That was too categorical and it is withdrawn.** There is no single universal required return per investor category; managers price transaction by transaction against the risk actually presented. [FACT] Private credit as an asset class has recently delivered pooled net IRRs closer to ~8.5%, and [PwC's 2026 private credit survey](https://www.pwc.com/gx/en/industries/private-equity/private-credit-survey.html) finds most managers targeting high-single-digit to low-double-digit unlevered returns, with 38% of respondents *lowering* return targets. Infrastructure equity has run in roughly the 9–11% annualised range. Conventional mid-market PE targets are commonly quoted at 15–25% and large-cap at 12–18% ([Opale Capital](https://www.opalecapital.com/en/blog/private-equity-returns-2026)), but those are marketing targets for a diversified fund, not a hurdle applied mechanically to a single asset.
+
+The accurate formulation is therefore:
+
+> **11–12% may well interest permanent capital, some strategic investors, commodity traders with an offtake motive, and development capital. It is probably not enough for most conventional PE or special-situations investors at this asset's current risk profile — brownfield restart risk, construction risk, commodity price risk and unresolved feedstock risk, stacked together.**
+
+Note the conditional. If the Chinese engineering work materially de-risks the project — firm LSTK pricing, verified production economics, contracted feedstock — the risk profile changes and so does the set of investors who can price it. The sequencing point stands either way: the investor universe should be selected *after* the technical work, not before.
+
+What does not change is the negative instruction. Conceding 51% to an investor who was never going to clear their hurdle is the worst available outcome: the founder loses control *and* still gets no deal. Test the hurdle before conceding the equity.
 
 **3. The founder call option, as conceived in the brief, is a trap.**
 
@@ -97,6 +106,8 @@ Structures rejected outright:
 See Table 2 for the full stack. Three points that are not in the brief's framing:
 
 **The funding need is not €200m. It is €233m.** Fees (~2.5%), initial working capital (€18m for a chemical plant turning ~€110–130m of revenue) and a six-month debt service reserve are not optional. A term sheet negotiated against "€200m" will be €33m short on day one, and the overrun mechanism (Section I) will then be triggered *by an error in the term sheet rather than by anything going wrong.* [RECOMMENDATION] Negotiate against total funding need, never against capex.
+
+**Leverage is the single largest unverified financial assumption in this study, and it should not be locked until the Chinese EPC groups say what they can bring from China Exim, Sinosure and the commercial banks.** Table 15 quantifies why it matters so much: at 65% senior debt the founder can defend 58% while paying the investor 12%; at 50% senior debt the same 12% leaves the founder only 45%. **Losing the ECA package costs roughly thirteen points of defensible ownership** — far more than any argument made across a table. Model 50 / 55 / 60 / 65% in parallel and treat 65% as a hoped-for case, not a base case.
 
 **Leverage above ~70% does not clear a 1.30x minimum DSCR** on base-case EBITDA (Table 10), and that is before stress. For a **cyclical commodity chemical** — where the brief itself correctly flags the danger — the right test is not what a lender signs at close but what survives a trough. Table 12, with the debt quantum held fixed, shows the structure survives EBITDA −25% (minimum DSCR 1.13x, five years of locked distributions, no default) and **breaks at −40%** (DSCR 0.79x). Since methanol and acetic acid margins can move more than 40% peak-to-trough, **65% is the right answer and 70%+ is founder vanity.**
 
@@ -145,7 +156,13 @@ Table 5. Recommended structure:
 
 Two consequences the brief does not anticipate:
 
-1. **The founder must have independent income for at least eight years.** Any structure, lifestyle or parallel obligation that requires cash out of MSK before Year 8 will break the deal or force the founder to sell equity cheaply at the worst moment. This is the most common way founders in exactly this position lose control — not through a veto right, but through personal liquidity pressure.
+1. **This is a statement about *distributions*, not about the founder working unpaid for eight years.** An earlier draft of this study said the founder "must have independent income for eight years." That conflated two different things and is corrected here.
+
+   ProjectCo should pay **market-rate executive compensation** for the role actually performed — running a several-hundred-million-euro industrial project — as an ordinary operating expense, benchmarked, disclosed and approved as a related-party matter. That is opex, not dividend extraction, and it has nothing to do with return on equity. No investor will object to a benchmarked CEO salary; every investor will object to unexplained "management fees", so the answer is transparency and an independent benchmark, not modesty.
+
+   [RECOMMENDATION] Agree the compensation framework **in the shareholders' agreement at signing**, not afterwards: base, bonus tied to defined construction and operating milestones, and the Services Co arrangement in Section 19. Fixing it after the investor is in makes it a related-party transaction they can price. Fixing it at signing makes it part of the deal.
+
+   What *does* remain true is the equity point: the founder's **wealth** from this project — the value of the shareholding — is near zero at Year 5, so any plan that depends on monetising the stake early, or on dividends before Year 8, will force a sale at the worst possible moment. That is still the most common way founders in this position lose control.
 
 2. **The model shows the acquisition obligation stalling.** In the base case the €40m seller credit cannot be serviced out of founder distributions in Years 5–8 — the balance stops amortising at €32.9m (Table 8) because there are no distributions to service it from. [RECOMMENDATION] Negotiate the seller credit with a **principal grace period to Year 8** and amortisation thereafter, explicitly matched to the ProjectCo distribution profile. A seller credit with a Year 3 start is a default waiting to happen, and defaulting to the *State* on the acquisition price is a catastrophic, politically visible failure.
 
@@ -172,6 +189,18 @@ At Year 10, recommended structure, investor has €82m in:
 [INFERENCE, from market practice rather than a documented comparable] A 1.6x-MOIC-only call will be rejected — it caps the investor below their hurdle while leaving them the full downside. A pure FMV call will usually be rejected too, because it gives the founder a free option on their own information advantage.
 
 The realistic landing zone is a **collar**: the investor gets a floor (the greater of a defined IRR and a minimum multiple) and the founder gets a ceiling (a maximum multiple). [RECOMMENDATION] Open at *lesser of 12% IRR / 1.5x*; target **greater of 12% IRR / 1.6x MOIC, capped at 2.10x**; fall back to a 2.25x cap; walk away above 2.5x, at which point the call is worthless because it can never be exercised profitably.
+
+### A cap and a target return are the same negotiation, not two
+
+Table 16 converts a proposed cap into what the investor actually earns under it (call at Year 10, base case):
+
+| MOIC cap | 1.75x | 1.80x | 1.90x | 2.00x | 2.10x | 2.25x | 2.40x |
+|---|---|---|---|---|---|---|---|
+| Investor IRR | 8.9% | 9.3% | 10.0% | 10.7% | **11.4%** | 12.3% | 13.2% |
+
+**A cap of 1.75–2.00x pays the investor 8.9–10.7%.** Any negotiating position that asks for a 1.8x cap *and* offers the investor a 12–15% total return is internally inconsistent: at €46m of EBITDA those two promises cannot both be kept. Reaching 12–15% in the base case requires a cap of **2.25x or higher**.
+
+This is not an argument for conceding the cap. It is an argument for knowing which of the two you are actually trading. If the Chinese engineering work lifts EBITDA materially, a low cap and a good investor return become compatible — the cap is fixed in euros while the asset's value is not, which is exactly the asymmetry Table 7b describes. **Until then, treat "1.8x cap" and "investor gets 12–15%" as alternatives, and decide which one is the real constraint.**
 
 ### Three mechanical points that matter more than the formula
 
@@ -411,9 +440,9 @@ Derived from Table 14 — achievable IRR on this asset is ~11.7% hold / ~11.4% u
 
 | Investor type | Target IRR | Cheque | Accepts minority? | Accepts founder control? | Serbia? | Brownfield chem? | Founder call? | **Verdict** |
 |---|---:|---|:--:|:--:|:--:|:--:|:--:|---|
-| Large-cap buyout PE (Apollo, KKR, Carlyle, Advent) | 18–22% | ✓ | rarely | no | some | some | no | **Do not approach** |
-| Distressed / opportunistic (Oaktree, Lone Star) | 20–25% | ✓ | sometimes | no | yes | yes | no | **Do not approach** |
-| Industrial turnaround specialists | 20%+ | ✓ | no | no | yes | yes | no | **Do not approach** |
+| Large-cap buyout PE (Apollo, KKR, Carlyle, Advent) | 12–18% typical band | ✓ | rarely | no | some | some | no | **Low priority** — not a category rule, but this risk profile sits above where they price |
+| Distressed / opportunistic (Oaktree, Lone Star) | 18–25% | ✓ | sometimes | no | yes | yes | no | **Low priority** unless the entry price falls sharply |
+| Industrial turnaround specialists | 18–22% | ✓ | no | no | yes | yes | no | **Low priority** — and they want control and management |
 | Mezzanine / private credit | 12–15% coupon-led | ✓ | n/a | **yes** | yes | cautious | n/a | **Approach** — for the junior tranche only, not the whole cheque |
 | **Infrastructure / value-add funds** | 12–14% | ✓ | **yes** | **yes** | yes, via CEE mandates | **only if contracted** | possibly | **Primary target — conditional on offtake** |
 | **Family offices / permanent capital** | 10–13% | €30–80m | **yes** | **yes** | yes | yes | **yes** | **Primary target** |
@@ -421,17 +450,21 @@ Derived from Table 14 — achievable IRR on this asset is ~11.7% hold / ~11.4% u
 | **Chinese state / industrial groups** | strategic | ✓ | yes | often demands control | **yes** | **yes** | rarely | **Approach with care** — see below |
 | Commodity traders (Vitol, Trafigura, Glencore) | 15–20% on capital, but motivated by flow | ✓ | **yes** | **yes** | yes | yes | **yes** | **Strong fit, under-considered** |
 | Sovereign wealth (Gulf, Azerbaijan) | 10–12% | ✓ | yes | yes | yes | yes | possibly | **Approach** — slow |
-| EBRD / IFC / DFIs | 8–12% + development mandate | €20–50m | **yes** | **yes** | **yes — core mandate** | yes, with ESG conditions | yes | **Approach early** — see below |
+| EBRD / IFC / DFIs | no published hurdle; "appropriate return", priced deal by deal | typically a minority slice, not the whole cheque | **yes — always minority** | **yes** | **yes — core region** | yes, subject to E&S standards | case by case | **Approach early, as part of the stack** — see below |
 
 ### Four observations the brief does not anticipate
 
 **Commodity traders are the most structurally compatible counterparty and are missing from the brief.** A trader's return does not come only from the equity — it comes from the offtake flow. They will therefore accept a lower equity IRR than any fund, routinely take minority positions, do not want operational control, and are comfortable with a founder call because the offtake agreement survives it. They also solve the offtake problem (item 2 on the efficient frontier) *in the same transaction*. [RECOMMENDATION] Approach a trader early, structured as equity + a long-term offtake.
 
-**DFIs are missing from the brief and are unusually well-matched.** EBRD and IFC lend into exactly this profile, accept minority positions, do not seek control, and their presence is the strongest available signal to commercial lenders. Their conditions are ESG and governance discipline, not ownership. The cost is time and process.
+**DFIs are missing from the brief and belong in the stack — but not as an €80m silent equity partner.** [FACT] EBRD states that it takes equity only as a minority holder and looks for an "appropriate return", structuring each project individually; it also expects significant sponsor equity, and for greenfield projects indicates its own participation at around 35% of total project cost or long-term capitalisation. IFC likewise typically takes only 5–20% of a project's equity and assesses technical viability, profitability, development impact and environmental and social standards.
+
+[INFERENCE] The practical implication: **an earlier draft of this study listed DFIs against a "10% IRR" as though that were a published tariff. It is not, and that characterisation is withdrawn.** Treat EBRD or IFC as (a) a credible minority equity slice of perhaps €20–40m, (b) a potential senior or subordinated lender, and above all (c) the strongest available signal to commercial lenders and to the Serbian state. They will not fill the junior capital gap alone, and their conditions — E&S compliance, procurement discipline, governance — are real costs in time and process, not free credibility.
 
 **On Chinese industrial groups.** They bring EPC, ECA-backed financing and genuine appetite for Serbian industry — the Smederevo precedent is real. But the Smederevo template was an **outright acquisition with the Chinese party in control**, not a minority investment behind a Serbian founder. [INFERENCE] The likeliest Chinese proposal is one where they take majority control and the founder becomes a local partner with a modest stake. That may still be the highest-probability route to the plant actually restarting, but it is not the structure the brief asks for. **Be clear which objective ranks higher before entering that room.**
 
-**The right approach order:** (1) commodity trader with offtake, (2) family office / permanent capital, (3) EBRD/IFC alongside, (4) infrastructure fund once offtake is contracted, (5) strategic chemical, (6) Chinese industrial as fallback. Do not approach PE at all.
+**The right approach order:** (1) commodity trader with offtake, (2) family office / permanent capital, (3) EBRD/IFC alongside as a slice, (4) infrastructure fund once offtake is contracted, (5) strategic chemical, (6) Chinese industrial as fallback.
+
+Conventional PE and special-situations funds go last — not because they are barred by category, but because on today's risk profile they are the least likely to price it and the most likely to demand control. If the engineering work de-risks the project materially, revisit that ordering rather than treating it as settled.
 
 ---
 
@@ -439,14 +472,14 @@ Derived from Table 14 — achievable IRR on this asset is ~11.7% hold / ~11.4% u
 
 | Term | **Opening** | **Target** | **Fallback** | **Walk-away** |
 |---|---|---|---|---|
-| Founder economics | 70% | **60%** | 55% | **Below 51%** |
-| Founder votes | 70% | **60%** | 51% | Below 51% |
+| Founder economics | 65% | **60%** | 55% | **Below 51%** (51/49 is the final fallback, never the opening) |
+| Founder votes | 65% | **60%** | 51% | Below 51% |
 | Investor cash | €82m | €82m | €100m | — |
 | Investor instrument | 80% SHL / 20% equity | **58% SHL / 42% equity** | 50/50 | All-equity |
 | SHL coupon | 7% | **9%** | 11% | Above 12% (non-deductible above ~30% of EBITDA) |
 | PIK | none | **construction + 1 ramp year** | +2 ramp years | Any PIK beyond Year 5 |
 | Blended investor IRR | 11% | **12–13%** | 14% | **Above 14%** |
-| Investor MOIC cap | 1.8x | **2.10x** | 2.25x | Above 2.5x |
+| Investor MOIC cap | 1.75–1.80x | **1.90–2.10x** | 2.25x | Above 2.5x — but see Table 16: a cap below ~2.10x and a 12–15% investor return are mutually exclusive at base-case EBITDA |
 | Board | 4 / 1 | **3 / 2 of 5** | 3 / 2 with CFO carve-out | Any structure without a founder majority |
 | Budget veto | none | **deemed approval, prior year + CPI** | approval with expert determination | Unqualified investor budget veto |
 | Refinancing veto | none | **none** | falls away below 2.5x leverage | Any permanent refinancing veto |
@@ -457,7 +490,9 @@ Derived from Table 14 — achievable IRR on this asset is ~11.7% hold / ~11.4% u
 | Personal guarantee | none | **none** | none | **Any recourse beyond ProjectCo shares** |
 | Transfer restrictions | full veto | **ROFR + tag + no transfers to a named competitor list** | ROFO + tag | Free transferability to any party |
 
-**Two negotiating notes.** First, the walk-away lines that matter are the *personal guarantee*, the *overrun mechanism* and the *uncapped call* — not the percentage. A founder at 55% with no personal guarantee and a clean overrun waterfall is in a far stronger position than a founder at 60% with a completion guarantee and a discounted equity cure. Second, concede in the order set out in Section J: technical diligence and offtake first, coupon and preference second, governance detail third, and equity percentage last.
+**Three negotiating notes.** First, the walk-away lines that matter are the *personal guarantee*, the *overrun mechanism* and the *uncapped call* — not the percentage. A founder at 55% with no personal guarantee and a clean overrun waterfall is in a far stronger position than a founder at 60% with a completion guarantee and a discounted equity cure. Second, concede in the order set out in Section J: technical diligence and offtake first, coupon and preference second, governance detail third, and equity percentage last.
+
+Third, **do not run this negotiation before the engineering study.** Table 15 shows the defensible founder share moving from 45% to 58% purely on whether the ECA debt package materialises, at a constant investor hurdle. Opening a percentage negotiation while the two biggest inputs — capex and leverage — are unverified means conceding against numbers that may not survive contact with the Tianchen/Hualu work. The right sequence is: Chinese engineering at their cost → real capex/opex/production economics → state terms → *then* the investor structure, re-run on actual numbers.
 
 ---
 

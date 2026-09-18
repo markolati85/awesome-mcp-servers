@@ -564,3 +564,100 @@ def structures() -> List[Structure]:
                   call_year=10, call_target_irr=0.14, call_moic_floor=1.60,
                   call_moic_cap=2.10, call_formula="capped"),
     ]
+
+
+# ----------------------------------------------------------------------------
+# CLI — re-run the recommended structure with real numbers when they arrive
+# ----------------------------------------------------------------------------
+
+def recommended(**kw) -> Structure:
+    """The structure recommended in STUDY.md, overridable field by field."""
+    d = dict(senior_pct=0.65, senior_rate=0.062, senior_tenor=12, senior_grace=2,
+             investor_equity=42.0, investor_shl=58.0, shl_rate=0.09,
+             shl_pik_years=1, shl_bullet_year=9,
+             founder_econ=0.60, founder_votes=0.60,
+             call_year=10, call_target_irr=0.14, call_moic_floor=1.60,
+             call_moic_cap=2.10, call_formula="capped")
+    d.update(kw)
+    return Structure("REC", "Recommended structure", **d)
+
+
+def defensible_founder_share(p: Project, target_irr: float, senior_pct: float = 0.65,
+                             **kw) -> float:
+    """Max economic share the founder can hold while still paying the investor target_irr."""
+    lo, hi = 0.05, 0.92
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        r = run(p, recommended(senior_pct=senior_pct, founder_econ=mid, **kw))
+        if (r["inv_irr_hold"] or 0) > target_irr:
+            lo = mid
+        else:
+            hi = mid
+    share = (lo + hi) / 2
+    # If even a near-zero founder share cannot pay the hurdle, the hurdle is
+    # unreachable on this asset — report that rather than a misleading floor.
+    return share if share > 0.06 else float("nan")
+
+
+def _main(argv):
+    import argparse
+    ap = argparse.ArgumentParser(
+        prog="msk_model",
+        description="Re-run the MSK structuring model with real engineering numbers.",
+        epilog="Example: python3 msk_model.py --capex 260 --ebitda 38 --senior-pct 0.55")
+    ap.add_argument("--capex", type=float, default=200.0, help="modernisation capex, EUR m")
+    ap.add_argument("--ebitda", type=float, default=46.0, help="full-ramp EBITDA, EUR m")
+    ap.add_argument("--senior-pct", type=float, default=0.65, help="senior debt as share of funding need")
+    ap.add_argument("--senior-rate", type=float, default=0.062, help="all-in senior rate")
+    ap.add_argument("--shl-rate", type=float, default=0.09, help="shareholder loan coupon")
+    ap.add_argument("--founder", type=float, default=0.60, help="founder economic share")
+    ap.add_argument("--moic-cap", type=float, default=2.10, help="cap on total investor money multiple")
+    ap.add_argument("--call-year", type=int, default=10)
+    ap.add_argument("--exit-multiple", type=float, default=5.5, help="EV/EBITDA at exit")
+    ap.add_argument("--working-capital", type=float, default=18.0)
+    ap.add_argument("--acquisition-price", type=float, default=40.0)
+    a = ap.parse_args(argv)
+
+    p = Project(capex=a.capex, ebitda_full=a.ebitda, exit_multiple=a.exit_multiple,
+                working_capital=a.working_capital, acquisition_price=a.acquisition_price)
+    s = recommended(senior_pct=a.senior_pct, senior_rate=a.senior_rate,
+                    shl_rate=a.shl_rate, founder_econ=a.founder,
+                    call_moic_cap=a.moic_cap, call_year=a.call_year)
+    r = run(p, s)
+
+    def f(x, d=1):
+        return "n/a" if x is None else f"{x:,.{d}f}"
+    def pc(x):
+        return "n/a" if x is None else f"{x:.1%}"
+
+    print(f"\n  INPUTS   capex {a.capex:.0f} | EBITDA {a.ebitda:.0f} | senior {a.senior_pct:.0%}"
+          f" @ {a.senior_rate:.2%} | SHL {a.shl_rate:.1%} | founder {a.founder:.0%}"
+          f" | exit {a.exit_multiple:.1f}x")
+    print("  " + "-" * 74)
+    print(f"  Funding need              {f(r['funding_need']):>10}   (incl. DSRA {f(r['dsra'])})")
+    print(f"  Senior debt               {f(r['senior']):>10}   ({r['gearing']:.0%}, sized by {r['senior_binding']})")
+    print(f"  Investor shareholder loan {f(r['investor_shl']):>10}")
+    print(f"  Investor equity           {f(r['investor_equity']):>10}")
+    print(f"  Investor total            {f(r['investor_cash']):>10}")
+    print("  " + "-" * 74)
+    print(f"  Minimum DSCR              {f(r['min_dscr'],2):>10}   {'OK' if (r['min_dscr'] or 0) >= 1.30 else '** BELOW 1.30 — NOT FINANCEABLE **'}")
+    print(f"  Distribution lock-up yrs  {r['lockup_years']:>10}")
+    print(f"  Investor IRR / MOIC       {pc(r['inv_irr_hold']):>10} / {f(r['inv_moic_hold'],2)}   (hold to Y15)")
+    print(f"  Investor IRR / MOIC       {pc(r['inv_irr_call']):>10} / {f(r['inv_moic_call'],2)}   (call Y{a.call_year} at {a.moic_cap:.2f}x cap)")
+    print(f"  Call price / fundable     {f(r['call']['chosen']):>10}   {'yes' if r['call_fund']['ok'] else 'NO — insufficient refinancing capacity'}")
+    print("  " + "-" * 74)
+    print(f"  Founder wealth  Y5 / Y10 / Y15   {f(r['founder_wealth'](5,False))} / "
+          f"{f(r['founder_wealth'](10,False))} / {f(r['founder_wealth'](15,False))}   (no call)")
+    print("  " + "-" * 74)
+    print("  Defensible founder share at this leverage, by investor hurdle:")
+    import math
+    for t in (0.10, 0.12, 0.14, 0.15):
+        sh = defensible_founder_share(p, t, a.senior_pct, shl_rate=a.shl_rate)
+        txt = "NOT REACHABLE at any split" if math.isnan(sh) else f"founder can hold {sh:.0%}"
+        print(f"      investor needs {t:.0%}  ->  {txt}")
+    print()
+
+
+if __name__ == "__main__":
+    import sys as _sys
+    _main(_sys.argv[1:])

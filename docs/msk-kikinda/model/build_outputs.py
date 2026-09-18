@@ -367,24 +367,123 @@ w()
 # ---------------------------------------------------------------- Table 14
 w("## Table 14 — Investor target IRR vs. what this asset can pay")
 w()
-w("| Investor type | Typical target IRR | Achievable here (hold) | Gap | Structurally compatible? |")
-w("|---|---:|---:|---:|:--:|")
-ach = R['inv_irr_hold']
-for lbl, tgt in (("Large-cap buyout PE", 0.18), ("Mid-market PE", 0.20),
-                 ("Distressed / opportunistic", 0.22), ("Industrial turnaround", 0.20),
-                 ("Growth equity minority", 0.18), ("Mezzanine / private credit", 0.15),
-                 ("Infrastructure equity (core-plus)", 0.12), ("Infrastructure (value-add)", 0.14),
-                 ("Family office / permanent capital", 0.11), ("Strategic industrial", 0.12),
-                 ("Sovereign / development capital", 0.10)):
-    gap = ach - tgt
-    ok = gap >= -0.015
-    w(f"| {lbl} | {tgt:.0%} | {pct(ach)} | {gap:+.1%} | {'**YES**' if ok else 'no'} |")
+w("Return expectations are **ranges that managers price deal by deal**, not published hurdles. The "
+  "bands below are indicative of where each category typically lands; none is a rule.")
 w()
-w("This single table determines who to call. Approaching Apollo, KKR or Oaktree with this asset at "
-  "this EBITDA is a guaranteed rejection — not because the founder asked for too much control, but "
-  "because the asset cannot pay their cost of capital at any split. The compatible universe is "
-  "infrastructure / value-add funds, family offices, strategics with an offtake motive, and "
-  "ECA-supported Chinese industrial capital.")
+w("| Investor type | Indicative return band | Achievable here (hold) | Likely fit at this risk profile |")
+w("|---|---|---:|---|")
+ach = R['inv_irr_hold']
+for lbl, band, verdict in (
+    ("Large-cap buyout PE", "12–18%", "Unlikely — restart + construction + commodity risk sits above the band"),
+    ("Mid-market PE", "15–25%", "Unlikely at current risk profile"),
+    ("Distressed / opportunistic", "18–25%", "Unlikely unless entry price falls sharply"),
+    ("Industrial turnaround", "18–22%", "Unlikely unless they take control and management"),
+    ("Mezzanine / private credit", "high-single to low-double digit unlevered; mezz blended 15–20%", "Possible for the junior tranche, not the whole cheque"),
+    ("Infrastructure equity", "~9–11% realised; value-add higher", "**Plausible — but only once cash flow is contracted**"),
+    ("Family office / permanent capital", "low double digit, patient", "**Plausible**"),
+    ("Strategic industrial / chemical", "strategic, return is not the only driver", "**Plausible**"),
+    ("Commodity trader with offtake", "equity return plus flow economics", "**Plausible — often the best fit**"),
+    ("Sovereign wealth", "low double digit, long hold", "Possible, slow"),
+    ("EBRD / IFC / DFIs", "no published hurdle; \"appropriate return\", minority only", "**Plausible as a slice of the stack, not the whole cheque**"),
+):
+    w(f"| {lbl} | {band} | {pct(ach)} | {verdict} |")
+w()
+w("**How to read this, and how not to.** An earlier version of this table assigned each category a "
+  "single required IRR and declared most of them impossible. That was wrong in method: there is no "
+  "universal hurdle per category, and managers price individual transactions against the risk "
+  "actually presented. What the model does support is narrower and still useful:")
+w()
+w(f"- This asset, on **unvalidated** base-case economics, can pay a minority investor about {pct(ach)}.")
+w("- That is plausibly interesting to permanent capital, some strategics, traders with an offtake "
+  "motive, and development capital.")
+w("- It is probably **not** enough for most conventional buyout or special-situations investors "
+  "**at this risk profile** — brownfield restart, construction, commodity and feedstock risk stacked together.")
+w("- Every one of those statements is conditional on the engineering work. Materially de-risk the "
+  "project and the set of investors who can price it changes with it.")
+w()
+
+
+# ---------------------------------------------------------------- Table 15
+w("## Table 15 — Defensible founder share, by leverage and by the investor's required return")
+w()
+w("The single most useful table for negotiation. For each level of senior debt, it solves for the "
+  "**maximum economic share the founder can defend** while still paying the investor its required "
+  "return. It answers two questions at once: what the founder can realistically hold, and what it "
+  "costs if ECA debt does not materialise.")
+w()
+
+def founder_share_for_irr(senior_pct, target_irr):
+    lo, hi = 0.20, 0.85
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        rr = run(BASE, rec(senior_pct=senior_pct, founder_econ=mid))
+        if (rr['inv_irr_hold'] or 0) > target_irr:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
+
+w("| Senior debt | Amount | Investor cash needed | Founder can defend if investor needs 10% | 12% | 14% | 15% |")
+w("|---:|---:|---:|---:|---:|---:|---:|")
+for sp in (0.45, 0.50, 0.55, 0.60, 0.65, 0.70):
+    rr = run(BASE, rec(senior_pct=sp))
+    cells = "".join(f" {founder_share_for_irr(sp, t):.0%} |" for t in (0.10, 0.12, 0.14, 0.15))
+    w(f"| {sp:.0%} | {num(rr['senior'])} | {num(rr['investor_cash'])} |" + cells)
+w()
+w("**Two conclusions.**")
+w()
+w("1. **60% is defensible only at high leverage and a modest investor hurdle.** At 65% senior debt "
+  "and a 12% investor return the founder can hold 58%. Demand 14% from the investor and the founder "
+  "falls to 45% — at the same leverage.")
+w("2. **Losing the ECA debt is an ownership event, not just a funding event.** Dropping from 65% to "
+  "50% senior debt while still paying the investor 12% cuts the founder's defensible share from 58% "
+  "to 45% — **thirteen percentage points**. The ECA financing package is therefore worth more to the "
+  "founder's ownership than any argument made across a negotiating table. Confirm it before "
+  "conceding anything on percentages.")
+w()
+
+# ---------------------------------------------------------------- Table 16
+w("## Table 16 — What a MOIC cap actually pays the investor")
+w()
+w("A cap is only credible if the investor can still reach its hurdle underneath it. This table "
+  "converts a proposed cap into the return the investor actually earns (call exercised Year 10, base case):")
+w()
+w("| MOIC cap | Call price | Investor IRR | Investor MOIC | Founder wealth Y15 |")
+w("|---:|---:|---:|---:|---:|")
+for cap in (1.75, 1.80, 1.90, 2.00, 2.10, 2.25, 2.40, 2.50):
+    rr = run(BASE, rec(cap=cap))
+    w(f"| {cap:.2f}x | {num(rr['call']['chosen'])} | {pct(rr['inv_irr_call'])} | "
+      f"{num(rr['inv_moic_call'],2)} | {num(rr['founder_wealth'](15,True))} |")
+w()
+w("**A cap in the 1.75–2.00x range pays the investor 8.9–10.7%, not 12–15%.** Reaching a 12–15% "
+  "total return in the base case requires a cap of **2.25x or higher**. A negotiating position that "
+  "asks for a 1.8x cap *and* offers the investor 12–15% is internally inconsistent — at €46m of "
+  "EBITDA those two promises cannot both be kept. Either the cap rises, or the EBITDA does.")
+w()
+
+# ---------------------------------------------------------------- Table 17
+w("## Table 17 — What the MOIC multiple is measured on")
+w()
+w("The cap must be defined on **every euro the investor receives**, not on the equity alone. "
+  "The model already computes it this way. Cash received by Year 10 in the recommended structure:")
+w()
+Rm = run(BASE, rec())
+shl10 = sum(x['shl_int'] + x['shl_prin'] for x in Rm['rows'] if x['year'] <= 10)
+div10 = sum(x['div_investor'] for x in Rm['rows'] if x['year'] <= 10)
+w("| Component | Cash received by Y10 |")
+w("|---|---:|")
+w(f"| Shareholder loan interest | included below |")
+w(f"| Shareholder loan interest + principal | {num(shl10)} |")
+w(f"| Ordinary dividends | {num(div10)} |")
+w(f"| **Total already received** | **{num(shl10+div10)}** |")
+w(f"| Total invested | {num(Rm['investor_cash'])} |")
+w(f"| **Multiple already banked before any exit payment** | **{(shl10+div10)/Rm['investor_cash']:.2f}x** |")
+w()
+w(f"So a 2.10x cap does **not** mean a {2.10*Rm['investor_cash']:.0f} exit cheque. The investor has "
+  f"already banked {(shl10+div10)/Rm['investor_cash']:.2f}x by Year 10 through coupon and dividends, "
+  f"so the call price is only **{num(Rm['call']['chosen'])}**. Drafting the cap as "
+  f"\"total distributions of every kind\" rather than \"proceeds on the shares\" is what makes the "
+  f"difference — see the term sheet.")
 w()
 
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "MODEL-OUTPUTS.md"), "w").write(OUT.getvalue())

@@ -115,9 +115,12 @@ Funded strictly in the following order; each layer exhausted before the next:
 |---|---|
 | **Window** | 24 months, opening on the fifth anniversary of COD (Year 10 from financial close) |
 | **Subject** | All, but not part, of the Investor's ordinary shares and any outstanding shareholder loan |
-| **Price** | The **greater** of (a) the amount which, together with all cash previously received by the Investor, delivers a **12% gross IRR** on all cash invested, and (b) **1.6x** total invested capital less all cash previously received — the total **capped at 2.10x** total invested capital |
+| **Price** | The **greater** of (a) the amount which, together with all Investor Receipts, delivers a **12% gross IRR** on all Investor Contributions, and (b) **1.6x** Investor Contributions less all Investor Receipts — the aggregate **capped** so that total Investor Receipts (including the call price) never exceed **2.10x Investor Contributions** |
+| **"Investor Contributions"** | Every euro paid into the Project by the Investor in any form: subscription for shares, shareholder loan principal, subordinated or overrun loans, standby amounts actually drawn, and any guarantee actually called |
+| **"Investor Receipts"** | **Every euro received by the Investor from any source in connection with the Project, of any kind and by any route**, including without limitation: shareholder loan interest (whether paid in cash or capitalised as PIK), shareholder loan principal repayments, dividends and any other distribution on the shares, preferred or priority returns, arrangement, monitoring, commitment, director, advisory or exit fees, sale proceeds, proceeds of any refinancing or dividend recapitalisation, and any amount received by an affiliate of the Investor in connection with the Project |
 | **Condition** | Exercise conditional on availability of refinancing on commercially reasonable terms. No penalty and no forfeiture if not exercised |
 | **Consent** | None required from the Investor |
+| **Reconciliation** | The Investor delivers, within 30 days of any exercise notice, a certified schedule of all Investor Contributions and Investor Receipts to date, subject to audit by the Founder's accountants. The cap bites on the aggregate of that schedule, not on proceeds attributable to the shares alone |
 
 ## 11. Investor exit
 
@@ -127,7 +130,7 @@ Funded strictly in the following order; each layer exhausted before the next:
 | **ROFR** | Founder holds a right of first refusal over any Investor transfer |
 | **Restricted transferees** | No transfer, at any time, to any party on an agreed list of competitors or to any party who would be an unsuitable holder; the list is agreed at signing and reviewed annually |
 | **Tag-along** | Investor may tag on any Founder sale, pro rata, on the same terms |
-| **Drag-along** | Founder may drag the Investor on a sale of 100% to a bona fide third party, provided the Investor receives no less than 2.10x total invested capital |
+| **Drag-along** | Founder may drag the Investor on a sale of 100% to a bona fide third party, provided total Investor Receipts (as defined above) reach at least 1.6x Investor Contributions |
 | **IPO** | Customary registration rights on any listing |
 
 ## 12. Conditions precedent

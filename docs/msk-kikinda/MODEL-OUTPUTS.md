@@ -262,19 +262,76 @@ Mechanism 5 — the market default an investor will propose — costs the founde
 
 ## Table 14 — Investor target IRR vs. what this asset can pay
 
-| Investor type | Typical target IRR | Achievable here (hold) | Gap | Structurally compatible? |
-|---|---:|---:|---:|:--:|
-| Large-cap buyout PE | 18% | 11.7% | -6.3% | no |
-| Mid-market PE | 20% | 11.7% | -8.3% | no |
-| Distressed / opportunistic | 22% | 11.7% | -10.3% | no |
-| Industrial turnaround | 20% | 11.7% | -8.3% | no |
-| Growth equity minority | 18% | 11.7% | -6.3% | no |
-| Mezzanine / private credit | 15% | 11.7% | -3.3% | no |
-| Infrastructure equity (core-plus) | 12% | 11.7% | -0.3% | **YES** |
-| Infrastructure (value-add) | 14% | 11.7% | -2.3% | no |
-| Family office / permanent capital | 11% | 11.7% | +0.7% | **YES** |
-| Strategic industrial | 12% | 11.7% | -0.3% | **YES** |
-| Sovereign / development capital | 10% | 11.7% | +1.7% | **YES** |
+Return expectations are **ranges that managers price deal by deal**, not published hurdles. The bands below are indicative of where each category typically lands; none is a rule.
 
-This single table determines who to call. Approaching Apollo, KKR or Oaktree with this asset at this EBITDA is a guaranteed rejection — not because the founder asked for too much control, but because the asset cannot pay their cost of capital at any split. The compatible universe is infrastructure / value-add funds, family offices, strategics with an offtake motive, and ECA-supported Chinese industrial capital.
+| Investor type | Indicative return band | Achievable here (hold) | Likely fit at this risk profile |
+|---|---|---:|---|
+| Large-cap buyout PE | 12–18% | 11.7% | Unlikely — restart + construction + commodity risk sits above the band |
+| Mid-market PE | 15–25% | 11.7% | Unlikely at current risk profile |
+| Distressed / opportunistic | 18–25% | 11.7% | Unlikely unless entry price falls sharply |
+| Industrial turnaround | 18–22% | 11.7% | Unlikely unless they take control and management |
+| Mezzanine / private credit | high-single to low-double digit unlevered; mezz blended 15–20% | 11.7% | Possible for the junior tranche, not the whole cheque |
+| Infrastructure equity | ~9–11% realised; value-add higher | 11.7% | **Plausible — but only once cash flow is contracted** |
+| Family office / permanent capital | low double digit, patient | 11.7% | **Plausible** |
+| Strategic industrial / chemical | strategic, return is not the only driver | 11.7% | **Plausible** |
+| Commodity trader with offtake | equity return plus flow economics | 11.7% | **Plausible — often the best fit** |
+| Sovereign wealth | low double digit, long hold | 11.7% | Possible, slow |
+| EBRD / IFC / DFIs | no published hurdle; "appropriate return", minority only | 11.7% | **Plausible as a slice of the stack, not the whole cheque** |
+
+**How to read this, and how not to.** An earlier version of this table assigned each category a single required IRR and declared most of them impossible. That was wrong in method: there is no universal hurdle per category, and managers price individual transactions against the risk actually presented. What the model does support is narrower and still useful:
+
+- This asset, on **unvalidated** base-case economics, can pay a minority investor about 11.7%.
+- That is plausibly interesting to permanent capital, some strategics, traders with an offtake motive, and development capital.
+- It is probably **not** enough for most conventional buyout or special-situations investors **at this risk profile** — brownfield restart, construction, commodity and feedstock risk stacked together.
+- Every one of those statements is conditional on the engineering work. Materially de-risk the project and the set of investors who can price it changes with it.
+
+## Table 15 — Defensible founder share, by leverage and by the investor's required return
+
+The single most useful table for negotiation. For each level of senior debt, it solves for the **maximum economic share the founder can defend** while still paying the investor its required return. It answers two questions at once: what the founder can realistically hold, and what it costs if ECA debt does not materialise.
+
+| Senior debt | Amount | Investor cash needed | Founder can defend if investor needs 10% | 12% | 14% | 15% |
+|---:|---:|---:|---:|---:|---:|---:|
+| 45% | 103.5 | 126.6 | 57% | 42% | 23% | 20% |
+| 50% | 115.5 | 115.5 | 59% | 45% | 28% | 20% |
+| 55% | 127.5 | 104.3 | 62% | 49% | 33% | 24% |
+| 60% | 139.5 | 93.0 | 66% | 54% | 39% | 30% |
+| 65% | 151.7 | 81.7 | 69% | 58% | 45% | 37% |
+| 70% | 164.0 | 70.3 | 73% | 63% | 51% | 44% |
+
+**Two conclusions.**
+
+1. **60% is defensible only at high leverage and a modest investor hurdle.** At 65% senior debt and a 12% investor return the founder can hold 58%. Demand 14% from the investor and the founder falls to 45% — at the same leverage.
+2. **Losing the ECA debt is an ownership event, not just a funding event.** Dropping from 65% to 50% senior debt while still paying the investor 12% cuts the founder's defensible share from 58% to 45% — **thirteen percentage points**. The ECA financing package is therefore worth more to the founder's ownership than any argument made across a negotiating table. Confirm it before conceding anything on percentages.
+
+## Table 16 — What a MOIC cap actually pays the investor
+
+A cap is only credible if the investor can still reach its hurdle underneath it. This table converts a proposed cap into the return the investor actually earns (call exercised Year 10, base case):
+
+| MOIC cap | Call price | Investor IRR | Investor MOIC | Founder wealth Y15 |
+|---:|---:|---:|---:|---:|
+| 1.75x | 60.8 | 8.9% | 1.75 | 256.7 |
+| 1.80x | 64.9 | 9.3% | 1.80 | 251.9 |
+| 1.90x | 73.0 | 10.0% | 1.90 | 242.5 |
+| 2.00x | 81.2 | 10.7% | 2.00 | 233.0 |
+| 2.10x | 89.4 | 11.4% | 2.10 | 223.5 |
+| 2.25x | 101.6 | 12.3% | 2.25 | 209.3 |
+| 2.40x | 113.9 | 13.2% | 2.40 | 195.1 |
+| 2.50x | 122.1 | 13.7% | 2.50 | 185.6 |
+
+**A cap in the 1.75–2.00x range pays the investor 8.9–10.7%, not 12–15%.** Reaching a 12–15% total return in the base case requires a cap of **2.25x or higher**. A negotiating position that asks for a 1.8x cap *and* offers the investor 12–15% is internally inconsistent — at €46m of EBITDA those two promises cannot both be kept. Either the cap rises, or the EBITDA does.
+
+## Table 17 — What the MOIC multiple is measured on
+
+The cap must be defined on **every euro the investor receives**, not on the equity alone. The model already computes it this way. Cash received by Year 10 in the recommended structure:
+
+| Component | Cash received by Y10 |
+|---|---:|
+| Shareholder loan interest | included below |
+| Shareholder loan interest + principal | 65.7 |
+| Ordinary dividends | 16.4 |
+| **Total already received** | **82.2** |
+| Total invested | 81.7 |
+| **Multiple already banked before any exit payment** | **1.01x** |
+
+So a 2.10x cap does **not** mean a 172 exit cheque. The investor has already banked 1.01x by Year 10 through coupon and dividends, so the call price is only **89.4**. Drafting the cap as "total distributions of every kind" rather than "proceeds on the shares" is what makes the difference — see the term sheet.
 
