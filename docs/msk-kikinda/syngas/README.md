@@ -28,12 +28,27 @@ better than previously reported.
 
 Per tonne of methanol: 374.8 kg carbon and 125.8 kg H2 (CO + 2H2 → CH3OH).
 
+## Corrections (September 2026) — three material errors, all in the project's favour
+
+| Withdrawn | Replaced with |
+|---|---|
+| Petcoke at €155/t delivered (base) | **€105/t**. Built up from a real logistics chain: FOB USG **$65.49/t Q3 2026** (Argus fell below $80 on 3 Jun), *less a high-S / low-HGI / high-metal discount a gasifier can uniquely accept*, plus a Supramax COA to the Adriatic, direct ship-to-wagon and a unit train to MSK's own siding. Four errors were found: FOB anchored on April not current, the off-spec discount missed entirely, rail over-priced, and a handling step plus a road leg double-counted. |
+| CBAM at €75/tCO₂ applied to MSK | **€0/t for these products today.** Serbia's CO₂ tax applies from 1 Jan 2026 at €4/t but the obligated parties are cement, fertilizers, iron & steel, aluminium and electricity — **methanol and acetic acid are not covered** — and EU CBAM does not cover them either. EU ETS *does* cover acids and bulk organic chemicals, so the same plant inside the EU would pay. This made the petcoke route look ~€290/t worse than it is. |
+| Methanol at €350/t | **€827–915/t.** Methanex European Posted Contract Price 2026: Q1 €535, Q2 €850, Q3 €915; Q2 realised at €827/t FOB Rotterdam, only ~3% below posted. Every margin in the earlier work was understated. |
+
+**Net effect:** methanol cash cost falls from €386/t to **€312/t**, and against a market at €827/t the merchant margin is ~€515/t, not the ~€0 the earlier numbers implied.
+
+## Two structural points added since
+
+- **Petcoke is a long position on European gas.** European methanol is priced off gas-fed marginal supply while a petcoke cost base is flat. Margin on 150 kt/y merchant methanol: ~€84m at today's prices, ~€43m if gas normalises to €40/MWh, ~€10m if gas falls to €18/MWh. Downside bounded, upside currently extraordinary.
+- **This is a payback-window play, not a permanent cost advantage.** At €118/tCO₂ the petcoke advantage over gas reaches zero; the EU is already at ~€86. You need roughly six years at Serbia's current treatment to cover €250m of capex. The bypassable shift and pre-flanged H₂/O₂ tie-ins are the exit, not a nicety.
+
 ## Results (cash cost €/t methanol)
 
 | Route | Bucket | €80/MWh grid | €20/MWh PPA | New capex |
 |---|---|---:|---:|---:|
 | R1 Natural gas POX ($505/1,000 Nm³) | A | 647 | — | €115m |
-| **R2 Petcoke via existing POX** | **A** | **386** | — | **€165m** |
+| **R2 Petcoke via existing POX** | **A** | **312** | — | **€165m** |
 | R3 Petcoke + electrolytic H2 | B | 705 | 337 | €310m |
 | R4 Refinery residue + H2 | B | 566 | 322 | €285m |
 | R6 Point-source CO2 + H2 | B | 785 | 362 | €340m |

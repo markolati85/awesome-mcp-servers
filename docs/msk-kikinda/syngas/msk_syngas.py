@@ -187,7 +187,11 @@ def breakeven_power(rt: Route, target_cash: float, feed_level="base") -> Optiona
 # ============================ THE ROUTES ====================================
 # Petcoke: fuel grade 6.5% S benchmark quoted at USD 104.50/t FOB US Gulf [FACT];
 # delivered Kikinda adds ocean freight, Constanta handling and Danube/rail [ENG].
-PETCOKE_DELIVERED = (120.0, 155.0, 200.0)
+# Corrected Sep 2026 from a built-up logistics chain (see README "Corrections"):
+#   FOB USG 6.5% S [FACT: $65.49/t Q3 2026 Houston; Argus <$80 on 3 Jun 2026]
+#   less a high-S / low-HGI / high-metal discount a gasifier can uniquely accept [ENG]
+#   + Supramax COA to the Adriatic + direct ship-to-wagon + unit train to MSK's own siding
+PETCOKE_DELIVERED = (81.0, 105.0, 141.0)
 
 ROUTES: List[Route] = [
  Route("R1","Natural gas POX (status quo, $505/1,000 Nm3)","A","pipeline gas",
@@ -279,3 +283,26 @@ def run_gas(elec: float, eur_per_gj: float = None) -> Dict:
     o["acoh_marginal"] = meoh_in * o["cash"] + co_in * 0.55 * o["cash"] + 46.0
     o["acoh_full"] = meoh_in * o["full"] + co_in * 0.55 * o["cash"] + 74.0
     return o
+
+
+# ---------------------------------------------------------------------------
+# MARKET AND CARBON REFERENCE  (corrected September 2026)
+# ---------------------------------------------------------------------------
+# [FACT] Methanex European Posted Contract Price 2026:
+#          Q1 EUR 535/t | Q2 EUR 850/t | Q3 EUR 915/t
+#        Q2 realised at EUR 827/t FOB Rotterdam, only ~3% below posted.
+# Earlier versions of this work used EUR 350/t. That was wrong by a wide margin
+# and understated the margin on every route.
+MEOH_EUR_T = dict(low=450.0, base=700.0, high=915.0)
+
+# [FACT] Serbia's CO2 tax applies from 1 Jan 2026 at EUR 4/t, but the obligated
+#        parties are large producers of cement, fertilizers, iron & steel,
+#        aluminium and electricity. METHANOL AND ACETIC ACID ARE NOT COVERED.
+# [FACT] EU CBAM does not currently cover methanol or acetic acid.
+# [FACT] EU ETS DOES cover acids and bulk organic chemicals; syngas/methanol sit
+#        in the ETS benchmarking framework, so the same plant inside the EU pays.
+# Earlier versions applied EUR 75/t CBAM to MSK. That was wrong for these
+# products today, and made the petcoke route look ~EUR 290/t worse than it is.
+CO2_EUR_T_SERBIA_TODAY = 0.0      # for methanol / acetic acid
+CO2_EUR_T_EU_ETS       = 86.0     # same plant inside the EU
+CO2_BREAKEVEN_PETCOKE  = 118.0    # EUR/tCO2 at which petcoke stops beating gas
