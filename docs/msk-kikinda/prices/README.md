@@ -134,3 +134,67 @@ realized €323/t.
 These are assessments and list prices, not transactions. The customs-data
 collector above (Part 8) is what turns this into transaction evidence, and it
 still needs one run from an unblocked network.
+
+
+---
+
+# Part 8c — CORRECTION: the traded price (19 September 2026)
+
+**Methanol T2 FOB Rotterdam (ICE/CME, cash-settled on the ICIS weekly assessment):**
+
+| | €/t |
+|---|---|
+| **Spot, 19 Sep 2026** | **405** |
+| 52-week range | **255 – 544** |
+| 3 Aug – 2 Sep 2026 average | 375.90 |
+| Methanex European **posted**, Q3 2026 | **915** |
+
+**The posted price is 2.26× the traded price.** The traded market has not been
+above €544/t in fifty-two weeks.
+
+## What this corrects
+
+**Part 4's "war spike of €830–915/t" was reading the posted price.** No such
+level ever traded. The real spike topped at €544. This has been wrong in the
+study since Part 4 and it is corrected here.
+
+**Part 8b's verdict that €450–500/t is "supported" was also built on posted
+prices and was wrong.** Against the traded range, €450 sits at the 67th
+percentile and €500 at the 85th. That is the upper half of the range, not a
+conservative plan.
+
+## The netback that survives
+
+T2 is duty-unpaid FOB Rotterdam, so it is not an MSK price. Adjusting:
+
+| | €/t |
+|---|---|
+| T2 spot | 405 |
+| + EU duty on CN 2905 11 00, 5.5% (Serbia's SAA may let MSK keep this — **verify in TARIC**) | 427 |
+| + contract-over-spot premium [EST] | +20–40 |
+| + inland freight advantage into HU/AT/SK (Part 4) | +14 |
+| **plausible FCA Kikinda today** | **461–481** |
+
+So €450–500 is defensible *today* — but only after these adjustments, and today
+is the 52-week midpoint, not a trough.
+
+## The project at real prices (petcoke, existing 15 MW turbine)
+
+| Scenario | T2 | FCA | AcOH | EBITDA | Payback |
+|---|---|---|---|---|---|
+| 52wk low (Nov '25) | 255 | 313 | 480 | **−€8.9m** | **loss** |
+| Aug–Sep 2026 avg | 376 | 441 | 561 | €16.0m | 19.0y |
+| **today** | **405** | **471** | **561** | **€20.2m** | **15.0y** |
+| 52wk high (Q2 '26) | 544 | 618 | 589 | €42.8m | 7.1y |
+
+With the turbine uprated (+€42m): loss → −€2.2m at the trough, 12.1y today,
+6.6y at the high.
+
+**The project loses money at the bottom of the observed methanol cycle.** That is
+the honest headline and it did not appear anywhere in Parts 1–7.
+
+## What does not change
+
+On gas, at these same prices, EBITDA is **−€59.2m**. On petcoke, **+€20.2m**.
+The €79m swing is still the whole case — and it is a feedstock case, not a price
+case, which is why it survives a methanol price this low.
