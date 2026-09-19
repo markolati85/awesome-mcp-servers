@@ -1,0 +1,39 @@
+{
+  "_README": "Observed, publicly-sourced prices. Every row carries its source. Collected 2026-09-19. Nothing here is from a paywalled service.",
+  "_WARNING": "Methanex POSTED is a GROSS LIST price, not a transaction price. Methanex REALIZED is the company's own audited average selling price across all regions. The two are not the same series and must never be compared without saying which is which.",
+
+  "methanex_europe_posted_eur_t": [
+    {"period": "2024Q4", "price": 570, "confidence": "implied", "note": "back-derived: Q1 2025 reported as a EUR 130/t increase on Q4 2024"},
+    {"period": "2025Q1", "price": 700, "confidence": "reported", "note": "record high for Europe"},
+    {"period": "2025Q2", "price": 623, "confidence": "implied", "note": "reported as a ~11% drop from Q1"},
+    {"period": "2025Q3", "price": 530, "confidence": "implied", "note": "implied from Q4 being a EUR 5 increase"},
+    {"period": "2025Q4", "price": 535, "confidence": "reported"},
+    {"period": "2026Q1", "price": 535, "confidence": "reported"},
+    {"period": "2026Q2", "price": 850, "confidence": "reported", "note": "posted 31 Mar 2026; Middle East supply shock"},
+    {"period": "2026Q3", "price": 915, "confidence": "reported", "note": "posted 30 Jun 2026; valid 1 Jul - 30 Sep 2026"}
+  ],
+
+  "methanex_global_realized_usd_t": [
+    {"period": "2026Q1", "price": 351, "confidence": "reported", "note": "company average realized price, all regions"},
+    {"period": "2026Q2", "price": 529, "confidence": "reported", "note": "company average realized price, all regions"}
+  ],
+
+  "acetic_acid_europe_usd_t": [
+    {"period": "2024-11", "price": 457, "confidence": "implied", "note": "back-derived from Nov 2025 being +29% YoY"},
+    {"period": "2025-11", "price": 589, "confidence": "reported", "note": "-6% MoM, +29% YoY"},
+    {"period": "2026-03", "price": 640, "confidence": "reported"},
+    {"period": "2026-09", "price": 610, "confidence": "reported"}
+  ],
+
+  "fx": {"usd_eur": 0.92, "note": "working rate; refresh before use"},
+
+  "sources": [
+    "https://www.methanex.com/our-products/about-methanol/pricing/",
+    "https://www.polymerupdate.com/News/Details/1495202",
+    "https://www.polymerupdate.com/News/Details/1459721",
+    "https://www.methanex.com/news/release/methanex-reports-record-north-american-production-and-second-quarter-2026-earnings/",
+    "https://www.methanex.com/news/release/methanex-reports-first-quarter-2026-results-well-positioned-in-current-environment/",
+    "https://www.chemanalyst.com/Pricing-data/acetic-acid-9",
+    "https://www.imarcgroup.com/acetic-acid-pricing-report"
+  ]
+}
