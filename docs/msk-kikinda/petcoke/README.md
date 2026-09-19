@@ -88,3 +88,51 @@ Collected 2026-09-19 by search. The session's egress policy blocked every primar
 host, so **nothing here was read off a source page** — Argus, the freight
 reports and the port data all came through search results. Confirm before
 committing volume. No figure here is a quotation; the delivered cost must be bid.
+
+---
+
+## Update — how much cheaper, and on what evidence
+
+| Route | Delivered €/t |
+|---|---|
+| US Gulf, base, no discount | 127.8 |
+| US Gulf, base, **with grade discount** | 117.7 |
+| **Mediterranean, base + discount** | **113.1** |
+| Mediterranean, low + discount | 94.5 |
+
+**Range €94.5–127.8/t — worth €8.0m/y at 241 kt/y.** But the savings do not carry
+equal weight:
+
+| Saving | €/t | Evidence |
+|---|---|---|
+| Grade discount (S/HGI/metals) | 10.1 | **Engineering** — logic is sound, no quoted differential |
+| Mediterranean over US Gulf | 4.6 | **Arithmetic** on observed USG freight; Med FOB is an estimate |
+| Low end of both ranges | 18.6 | **Speculative** — needs a tender, do not plan on it |
+
+### Danube barge — tested and killed
+
+25 Sep 2026: river transport Izmail → Serbia quoted at **€30–31/t** for 5–7 kt
+parcels, against €31/t for rail Bar–Kikinda. **No saving.** Danube water levels
+are at historic lows, barges run significantly underloaded, and rates are
+described as extremely tentative because cost depends on available draft. For a
+plant needing 4.5 × 53,000 t cargoes a year, a route that depends on river draft
+is a reliability problem, not a saving.
+
+### Rail Bar–Kikinda — unpriced, and 27% of the bill
+
+Montenegrin and Serbian freight tariffs are not published; Montecargo and Srbija
+Kargo must be asked directly. The €0.045–0.060/t-km used here is an engineering
+estimate with **no evidential support**. That one line is worth €27–36/t — **the
+largest remaining uncertainty in the delivered cost, larger than the FOB itself.**
+
+### A trap to expect
+
+Searches return "USA USD 385–478/t, Brazil 450–475, India 185". These are **6–8×
+the fuel-grade level** and mix calcined coke, CIF and FOB bases. Calcined coke is
+anode feedstock, not this plant's raw material. Do not let it into a business plan.
+
+### Deliverable
+
+`MSK-Petkoks-Nabavka-Sep2026.pdf` — six pages, Serbian (Cyrillic), with the
+evidence-grade table, all sources, and a limitations page stating that nothing
+was read off a primary page.
