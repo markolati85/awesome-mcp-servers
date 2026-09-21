@@ -1,0 +1,7 @@
+# Python bytecode from running the models
+__pycache__/
+*.py[cod]
+
+# Price collector working directories (Part 8)
+prices/.cache/
+prices/out/
